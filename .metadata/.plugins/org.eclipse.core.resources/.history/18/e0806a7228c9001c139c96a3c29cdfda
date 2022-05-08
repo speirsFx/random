@@ -1,0 +1,10 @@
+package Array;
+
+public class FirstAndLast {
+
+    public int[] searchRange(int[] nums, int target) {
+       
+    	
+    }
+	
+}

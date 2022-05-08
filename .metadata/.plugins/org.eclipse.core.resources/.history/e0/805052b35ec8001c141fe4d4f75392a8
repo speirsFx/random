@@ -1,0 +1,22 @@
+package Array;
+
+import java.util.Arrays;
+
+public class Lexographical {
+
+	public static void Order(int[] nums) {
+		
+		int largest1 = -1;
+		
+		for(int i = 0; i < nums.length; i++) {
+			if(nums[i] < nums[i+1]) {
+				largest1 = i;
+			}
+		}
+		
+		if(largest1 == -1) {
+			Arrays.sort(nums);
+			
+		}
+	}
+}

@@ -1,0 +1,63 @@
+package Array;
+
+public class ValidSudoku {
+	
+	
+	public static boolean columnCheck(char[][] board, char c, int row) {
+		
+		boolean check = true;
+		
+		for(int i = 0; i <9; i++) {
+			if(board[row][i] == c && board[row][i] != '.') {
+				check = false;
+			}
+		}
+		
+		return check;
+		
+		
+	}
+	
+	public static boolean rowCheck(char[][] board, char c, int col) { 
+		
+		boolean check = true;
+		
+		for(int i = 0; i <9; i++) {
+			if(board[i][col] == c && board[i][col] != '.') {
+				check = false;
+			}
+		}
+		
+		return check;
+	}
+	
+	
+	public static boolean gridCheck(char[][] board, char c, int col, int row) {
+		
+		boolean check = true;
+		for(int i = 0; i < 3; i++) {
+			for(int j = 0; j < 3; j++ ) {
+				if(i != col && row != j && board[i + row%3][j + col%3] == c && c != '.') {
+					check = false;
+				}
+			}
+		}
+		return check;
+	}
+	
+    public boolean isValidSudoku(char[][] board) {
+    	
+    boolean result = false; 
+        
+    	for(int i = 0; i < 9; i++) {
+    		for(int j = 0; j < 9; j++) {
+    			if(board[i][j] != '.') {
+    				gridCheck(board, board[i][j], i,j);
+    			}
+    		}
+    	}
+    	
+    	return false;
+    }
+	
+}

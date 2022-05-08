@@ -1,0 +1,38 @@
+package Array;
+
+public class RotatedArray {
+
+    public static int search(int[] nums, int target) {
+    	
+    	int l = nums.length-1;
+    	int k = 0;
+    	int lowest = Integer.MAX_VALUE;
+    	int lowest_num =Integer.MAX_VALUE;
+    	
+    	while(l > k) {
+    		if(nums[l] >= nums[k] && lowest_num >= nums[k]) {
+    			lowest = k;
+    			lowest_num = nums[k];
+    		}
+    		else if(lowest_num > nums[l]) {
+    			lowest = l;
+    			lowest_num = nums[l];
+    		}
+    		l--;
+    		k++;
+    	}
+    	
+    	
+        
+    	
+    	return lowest;
+    }
+    
+    
+    public static void main(String[] args) {
+		int a[] = {4,-3,-2,0,1,2,3};
+		
+		System.out.println(search(a,2));
+	}
+	
+}

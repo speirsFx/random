@@ -1,0 +1,2 @@
+module TripletSum {
+}
